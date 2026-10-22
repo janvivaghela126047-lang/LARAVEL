@@ -5,14 +5,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+Route::prefix('page')->group(function(){
+
+    Route::get('page/about', function () {
+        return "<h1> about page</h1>";
+    });
+    
+    Route::get('page/gallery', function () {
+        return "<h1> gallery page</h1>";
+    });
+    
+    Route::get('page/post/firstpost', function () {
+        return "<h1> first post page</h1>";
+    });
 });
 
-Route::get('/post/{id}/comment/{commentid?}', function ($id, $commentid = null) {
-
-    if ($id) {
-        return "<h1>POST ID: " . $id . " & Comment: " . ($commentid ?? 'No comment ID') . "</h1>";
-    } else {
-        return "<h1>NO ID FOUND</h1>";
-    }
-
-})->where('id', '[0-9]+')->whereAlpha('commentid');
+Route::fallback(function(){
+   return "<h1>page note found.</h1>";
+});
