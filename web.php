@@ -2,49 +2,38 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 
+Route::get('/File1', function () {
+    return view('File1');
+});
 
-//Route::prefix('page')->group (function(){
+Route::get('/File2', function () {
+    return view('File2');
+});
 
-    //Route::get('/about',function(){
-       // return "<h1>About Page</h1>";
+Route::get('/File3', function () {
+    return view('File3');
+});
 
-   // });
+Route::get('/File4', function () {
+    return view('File4');
+});
 
-    //Route::get('/gallery',function(){
-       // return "<h1>Gallery Page</h1>";
-   // });
-
-    //Route::get('/post/firstpost',function(){
-        //return "<h1>First Post Page</h1>";
-    //});
-
-//});
-
-//Route::fallback(function(){
-    //return "<h1>Page not found.<h1>";
-//});
-
-
-// Route::get('/post/firstpost', function () {
-  //   return view('firstpost');
- //});
-
- //Route::get('/post/{id?}/comment/{commentid?}', function (string $id = null, string $commentid = null ) {
-   //  if($id)
-    //{
-      //  return "<h1> Post ID : ".$id."</h1><h2>". $commentid."</h2>";
-    //}
-     //else
-    //{
-      // return "<h1> No Post Id found </h1>";
-  //}
-    
-
- //})->whereNumber('id');
+Route::get('/File5', function () {
+    return view('File5');
+});
